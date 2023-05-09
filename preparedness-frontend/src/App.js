@@ -1,19 +1,19 @@
 import React from "react"
-import { Button, Input, Label } from "reactstrap"
+import { Input, Label } from "reactstrap"
 import ModalComponent from "./components/ModalComponent"
 import "./App.css"
 
 const App = () => {
   return (
     <div className="entire-content">
-      <h1>Preparedness Assessment</h1>
+      <h1 className="title">Preparedness Assessment</h1>
       <div className="form">
-        <div className="input">
-          <Label for="name">Enter your name</Label>
-          <Input />
+        <div className="input" input="text">
+          <Label for="name" className="name">Enter your name</Label>
+          <div >
+          <Input className="input-field" placeholder="type your name"/>
         </div>
-        <Button>Click Me</Button>
-        <Button>Reset</Button>
+        </div>
         <ModalComponent />
       </div>
     </div>

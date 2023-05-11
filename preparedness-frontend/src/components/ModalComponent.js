@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React from 'react';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
-const ModalComponent = (args) => {
-  const [modal, setModal] = useState(false);
 
-  const toggle = () => setModal(!modal);
+
+const ModalComponent = ({input, toggle, modal}) => {
 
   return (
+
     <div>
-      <div className="button">
-      <Button className="button1"  onClick={toggle}>
-        Click Me
-      </Button>
-      <Button className="button2">Reset</Button>
-      </div>
-      <Modal isOpen={modal} toggle={toggle} {...args}>
-        <ModalHeader toggle={toggle}>Hello, `${}!`</ModalHeader>
+      <Modal isOpen={modal} toggle={toggle} >
+        <ModalHeader toggle={toggle}>Hello there {input}!</ModalHeader>
         <ModalBody>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -25,14 +19,6 @@ const ModalComponent = (args) => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>
-            Do Something
-          </Button>{' '}
-          <Button color="secondary" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
       </Modal>
     </div>
   );
